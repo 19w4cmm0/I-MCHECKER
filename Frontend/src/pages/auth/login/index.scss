@@ -1,0 +1,100 @@
+.login {
+    position: relative; /* Cần cho pseudo-element */
+    display: flex;
+    justify-content: space-between;
+    background-image: url(https://auth.services.adobe.com/img/canvas/Fotolia_228669299_XL.jpg);
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+    align-items: center;
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5); /* Màu đen với độ mờ */
+        z-index: 1; /* Đảm bảo lớp phủ nằm trên hình nền nhưng dưới nội dung */
+    }
+
+    &__form, &__logo {
+        position: relative; /* Để nằm trên lớp phủ */
+        z-index: 2; /* Đảm bảo phần tử nội dung nằm trên lớp phủ */
+    }
+
+    &__form {
+        background: #fff;
+        border-radius: 4px;
+        display: flex;
+        flex-direction: column;
+        width: 610px;
+        padding: 40px 56px;
+        height: 530px;
+        margin-right: 300px;
+        margin-top: 20px;
+    }
+
+    &__logo {
+        display: flex;
+        justify-content: center; /* Căn giữa theo chiều ngang */
+        align-items: center; /* Căn giữa theo chiều dọc */
+        width: 100%;
+        text-align: center;
+        color: #fff;
+        margin-right: 100px;
+        margin-top: 120px;
+        img {
+            width: 50px;
+            height: auto; /* Giữ tỷ lệ chiều cao hợp lý cho ảnh */
+            margin-right: 5px;
+        }
+    }
+    &__title {
+        margin-bottom: 30px;
+        h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+    }
+    &__input {
+        label {
+            font-size: 13px;
+        }
+        input {
+            width: 100%;
+            border-radius: 5px;
+            border: 1px solid #909090; 
+            &:focus {
+                border: #222;
+            }
+        }
+    }
+    button {
+        display: block;
+        margin-left: auto;
+        border-radius: 20px;
+        padding: 4px 15px;
+        border: none;
+        color:#fff;
+        font-weight: 600;
+        background: #1473e6;
+        cursor: pointer;
+        transition: background .13s ease-out, border-color .13s ease-out, color .13s ease-out, box-shadow .13s ease-out, -webkit-box-shadow .13s ease-out;
+        &:hover {
+            background: #0D66D0;
+        }
+    }
+    &__close {
+        color: #98A2B3;
+        position:absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 20px;
+        z-index: 1000;
+        cursor:pointer;
+        &:hover {
+            color: #fff;
+        }
+    }
+}

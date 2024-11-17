@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+$font-family: "Inter", sans-serif;
+$color-one: #E15A46;
+$color-two: rgba(255, 255, 255, 0.56);
+$color-bg1: #232323;
+$color-gray-300: hsl(210deg 10% 30%);
+
+.layout-default {
+    background: #000000;
+    font-family: $font-family;
+    color: $color-two;
+    min-height: 100vh;
+}
+.header {
+    display:flex;
+    padding: 20px;
+    align-items: center;
+    &__invite {
+        margin-right: 20px;
+    }
+    &__login  {
+        font-size: 13px;
+        line-height: 16px;
+        background: rgba(255, 255, 255, 0.08);
+        color: rgba(255, 255, 255, 0.56);
+        display: flex;
+        border: none;
+        cursor: pointer;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        border-radius: 4px;
+        margin-right: 10px;
+        &:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+    }
+    &__logout {
+        font-size: 13px;
+        line-height: 16px;
+        background: rgba(255, 255, 255, 0.08);
+        color: rgba(255, 255, 255, 0.56);
+        display: flex;
+        border: none;
+        cursor: pointer;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        border-radius: 4px;
+        margin-right: 10px;
+        display: flex;
+        align-items: center;
+        &:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        span {
+            margin-left: 5px;
+        }
+    }
+    &__register {
+        font-size: 13px;
+        line-height: 16px;
+        color: #fff;
+        background: $color-one;
+        display: flex;
+        border: none;
+        cursor: pointer;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        border-radius: 4px;
+        margin-right: 20px;
+    }
+}
+.categorywrap {
+    display:flex;
+    justify-content: center;
+    margin-top: 100px;
+}
+.categoryitem {
+    position: relative;
+    background-color: transparent;
+    color: #ffffff;
+    padding: 3px 10px;
+    cursor: pointer;
+    margin: 5px;
+    border-radius: 10px;
+    transition: color 0.3s ease;
+  
+    // Hiệu ứng hover cho toàn bộ thẻ, chỉ đổi màu text nếu cần
+    &:hover {
+      color: #ffffff;
+    }
+    &:hover div {
+        transform: scale(1.06); 
+        opacity: 1;
+    }
+  
+    // Thẻ div bên trong sẽ thay đổi kích thước khi hover
+    div {
+      position: absolute;
+      background-color: transparent;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      outline: 1px solid $color-gray-300;
+      border-radius: inherit;
+      transform: scale(0.99);  // Kích thước mặc định
+      transition: transform 0.3s ease;
+      opacity: 0.8;
+    }
+  }
